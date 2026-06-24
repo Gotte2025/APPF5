@@ -1,0 +1,21 @@
+{
+  "name": "Turnos F5",
+  "short_name": "Turnos F5",
+  "description": "Organizá y anotate a turnos de fútbol 5.",
+  "start_url": "/dashboard",
+  "display": "standalone",
+  "background_color": "#0B2B1C",
+  "theme_color": "#0B2B1C",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
