@@ -9,6 +9,11 @@ import { Card } from "@/components/ui/Card";
 import { register } from "@/lib/auth/register";
 import type { UserRole } from "@/types/user";
 
+// Clave secreta para poder registrarse como Organizador.
+// Cambiala por la que quieras, y compartísela solo a quien
+// quieras que pueda crear complejos/canchas/partidos.
+const ORGANIZER_SECRET = "B3B37162CCC91";
+
 export default function RegisterPage() {
   const router = useRouter();
   const [fullName, setFullName] = useState("");
@@ -16,6 +21,7 @@ export default function RegisterPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState<UserRole>("player");
+  const [organizerCode, setOrganizerCode] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [confirmationSent, setConfirmationSent] = useState(false);
@@ -23,6 +29,12 @@ export default function RegisterPage() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setError(null);
+
+    if (role === "owner" && organizerCode !== ORGANIZER_SECRET) {
+      setError("La clave de organizador es incorrecta.");
+      return;
+    }
+
     setLoading(true);
 
     const result = await register({ fullName, phone, email, password, role });
@@ -116,6 +128,18 @@ export default function RegisterPage() {
               </button>
             </div>
           </div>
+
+          {role === "owner" && (
+            <Input
+              label="Clave de organizador"
+              type="password"
+              name="organizerCode"
+              value={organizerCode}
+              onChange={(e) => setOrganizerCode(e.target.value)}
+              placeholder="Pedísela al administrador"
+              required
+            />
+          )}
 
           {error && <p className="text-xs text-rojo">{error}</p>}
           <Button type="submit" loading={loading} className="mt-2">
