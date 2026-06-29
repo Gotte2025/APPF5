@@ -17,7 +17,7 @@ export function Navbar() {
   return (
     <header className="flex h-16 items-center justify-between border-b border-white/10 bg-cancha-900 px-6">
       <Link href="/dashboard" className="flex items-center gap-2">
-        <span className="font-display text-lg tracking-wide text-linea">TURNOS F5</span>
+        <span className="font-display text-lg tracking-wide text-linea">APPF5</span>
       </Link>
 
       <div className="flex items-center gap-4">

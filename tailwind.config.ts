@@ -16,10 +16,12 @@ const config: Config = {
           600: "#1C6A3D",
           500: "#258A4F",
         },
+        // Antes "cono" (naranja). Ahora "cono" = azul del escudo del logo,
+        // se mantiene el mismo nombre de variable para no romper componentes existentes.
         cono: {
-          light: "#FBD7BF",
-          DEFAULT: "#E8602C",
-          dark: "#A8410F",
+          light: "#9FD7E8",
+          DEFAULT: "#1C5A82",
+          dark: "#0F3A57",
         },
         linea: {
           DEFAULT: "#F4F1E6",

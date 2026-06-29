@@ -1,6 +1,6 @@
 {
-  "name": "Turnos F5",
-  "short_name": "Turnos F5",
+  "name": "APPF5",
+  "short_name": "APPF5",
   "description": "Organizá y anotate a turnos de fútbol 5.",
   "start_url": "/dashboard",
   "display": "standalone",
