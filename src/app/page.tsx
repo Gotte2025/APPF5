@@ -13,7 +13,7 @@ export default function HomePage() {
         className="rounded-2xl"
         priority
       />
-      <span className="font-display text-3xl tracking-wide text-linea">APPF5 TEST 29/06</span>
+      <span className="font-display text-3xl tracking-wide text-linea">APPF5</span>
       <p className="max-w-md text-sm text-linea-dim">
         Organizá los turnos de tu complejo de fútbol 5 y dejá que los jugadores se anoten solos,
         partido por partido, hasta completar el equipo.
